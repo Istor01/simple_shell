@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * add_node - Adds a node to the start of the linked list
- * @head: Address of pointer to the head node
- * @str: String field of node
- * @num: Node index used for history
+ * add_node - Adds a node to the start of the list struct
+ * @head: Address of the pointer to head node
+ * @str: Str field of node
+ * @num: Node index used by history
  *
- * Return: Pointer to the newly added node or NULL on failure
+ * Return: size of list
  */
 list_t *add_node(list_t **head, const char *str, int num)
 {
@@ -34,12 +34,12 @@ list_t *add_node(list_t **head, const char *str, int num)
 }
 
 /**
- * add_node_end - Adds a new node to the end of the list
+ * add_node_end - Adds a node to end of the list
  * @head: Address of pointer to the head node
- * @str: String field of the node
- * @num: Node index used for history
+ * @str: Str field of node
+ * @num: Node index used by the history
  *
- * Return: Pointer to the new node, or NULL on failure
+ * Return: Size of list
  */
 list_t *add_node_end(list_t **head, const char *str, int num)
 {
@@ -75,10 +75,10 @@ list_t *add_node_end(list_t **head, const char *str, int num)
 }
 
 /**
- * print_list_str - Prints only the string element of a list_t linked list
- * @h: Pointer to first node
+ * print_list_str - Prints only the struct element of a list_t linked list
+ * @h: Pointer to the first node
  *
- * Return: Size of list
+ * Return: size of list
  */
 size_t print_list_str(const list_t *h)
 {
@@ -95,9 +95,9 @@ size_t print_list_str(const list_t *h)
 }
 
 /**
- * delete_node_at_index - Deletes a node at given index
+ * delete_node_at_index - Deletes the node at given index
  * @head: Address of pointer to the first node
- * @index: Index of the node to delete
+ * @index: Index of node to delete
  *
  * Return: 1 on success, 0 on failure
  */
@@ -135,8 +135,8 @@ int delete_node_at_index(list_t **head, unsigned int index)
 }
 
 /**
- * free_list - Frees all nodes of a list
- * @head_ptr: Address of pointer to head node
+ * free_list - Frees all nodes of the list
+ * @head_ptr: Address of the pointer to head node
  *
  * Return: void
  */
