@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * list_len - To Provide length of the linked list
+ * list_len - Provides the length of the linked list
  * @h: The pointer to the first node
  *
- * Return: The size of the list
+ * Return: Size of the list
  */
-size_t list_len(const list_t h)
+size_t list_len(const list_t *h)
 {
 	size_t i = 0;
 
@@ -19,10 +19,10 @@ size_t list_len(const list_t h)
 }
 
 /**
- * list_to_strings - Convert a linked list of strings to an array of strings
+ * list_to_strings - Returns array of strings of the list->str
  * @head: The pointer to the first node
  *
- * Return: Array if the strings
+ * Return: The array of strings
  */
 char **list_to_strings(list_t *head)
 {
@@ -47,18 +47,19 @@ char **list_to_strings(list_t *head)
 			return (NULL);
 		}
 
-		str = _strcpy(str. node->str);
+		str = _strcpy(str, node->str);
 		strs[i] = str;
 	}
 	strs[i] = NULL;
 	return (strs);
 }
 
+
 /**
- * print_list - To print all elements of a list_t linked list
+ * print_list - Prints the elements of a list_t linked list
  * @h: The pointer to the first node
  *
- * Return: Size of the list
+ * Return: Size of list
  */
 size_t print_list(const list_t *h)
 {
@@ -78,14 +79,14 @@ size_t print_list(const list_t *h)
 }
 
 /**
- * node_starts_with - Returns node which the starts with a prefix to match char
- * @node: The pointer to the list head
+ * node_starts_with - Returns the node whose string starts with a prefix
+ * @node: The pointer to list head
  * @prefix: The string to match
- * @c: The nect character after the prefix to match
+ * @c: The next character after the prefix to match the list
  *
- * Return: Match node or NULL if not found
+ * Return: Match node or null n error
  */
-list_t node_starts_with(list_t *node, char *prefix, char c)
+list_t *node_starts_with(list_t *node, char *prefix, char c)
 {
 	char *p = NULL;
 
@@ -100,13 +101,13 @@ list_t node_starts_with(list_t *node, char *prefix, char c)
 }
 
 /**
- * get_node_index - To get the index of the node
+ * get_node_index - Collects the index of the node
  * @head: The pointer to the list head
  * @node: The pointer to the node
  *
- * Return: Index of the node, or -1 if not found
+ * Return: index of node or -1
  */
-ssize_t get_node_index(list_t head, list_t node)
+ssize_t get_node_index(list_t *head, list_t *node)
 {
 	size_t i = 0;
 
