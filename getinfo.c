@@ -28,7 +28,7 @@ void set_info(info_t *info, char **av)
 		if (!info->argv)
 		{
 			info->argv = malloc(sizeof(char *) * 2);
-			info(info->argv)
+			if (info->argv)
 			{
 				info->argv[0] = _strdup(info->arg);
 				info->argv[1] = NULL;
@@ -42,6 +42,7 @@ void set_info(info_t *info, char **av)
 		replace_vars(info);
 	}
 }
+
 
 /**
  * free_info - Frees info_t struct fields
