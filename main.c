@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * main - The entry point of a shell program
- * @ac: The number of arguments
- * @av: An array of string with the arguments vector
+ * main - The entry point
+ * @ac: The arg count
+ * @av: The arg vector
  *
- * Return: 0 on a successful execution, 1 on error
+ * Return: 0 on success, 1 on error
  */
 int main(int ac, char **av)
 {
@@ -14,12 +14,12 @@ int main(int ac, char **av)
 
 	asm ("mov %1, %0\n\t"
 			"add $3, %0"
-			: "=" (fd)
+			: "=r" (fd)
 			: "r" (fd));
 
 	if (ac == 2)
 	{
-		fd = open(av[1], 0_RDONLY);
+		fd = open(av[1], O_RDONLY);
 		if (fd == -1)
 		{
 			if (errno == EACCES)
